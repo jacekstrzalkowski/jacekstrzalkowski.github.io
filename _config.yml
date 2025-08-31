@@ -1,0 +1,12 @@
+title: "Jacek Strzałkowski"
+description: "Notes, projects, and experiments"
+markdown: kramdown
+highlighter: rouge
+
+theme: null
+
+defaults:
+  - scope: { path: "" , type: "posts" }
+    values:
+      layout: post
+      permalink: /blog/:year/:month/:day/:title/
