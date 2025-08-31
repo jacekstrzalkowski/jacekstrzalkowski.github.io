@@ -1,0 +1,29 @@
+<!-- _layouts/post.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{{ "/style.css" | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <nav>
+      <a href="{{ "/" | relative_url }}">Home</a>
+      <a href="{{ "/contact.html" | relative_url }}">Contact</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <article class="post">
+      <h1>{{ page.title }}</h1>
+      {{ content }}
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>© {{ site.time | date: "%Y" }} {{ site.title }}</p>
+  </footer>
+</body>
+</html>
