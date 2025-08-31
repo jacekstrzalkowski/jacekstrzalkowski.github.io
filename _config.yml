@@ -1,12 +1,4 @@
 title: "Jacek Strzałkowski"
-description: "Notes, projects, and experiments"
-markdown: kramdown
-highlighter: rouge
-
+future: true
+timezone: Europe/Warsaw
 theme: null
-
-defaults:
-  - scope: { path: "" , type: "posts" }
-    values:
-      layout: post
-      permalink: /blog/:year/:month/:day/:title/

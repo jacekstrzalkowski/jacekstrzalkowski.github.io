@@ -1,9 +1,16 @@
+---
+title: Home
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title>Jacek Strzałkowski Personal Site</title>
+    <meta name="keywords" content="homelab, Python, Linux">
+    <meta name="author" content="Jacek Strzałkowski">
+    <meta name="description" content="Blog about homelab, making and my computational adventures">
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -25,16 +32,27 @@
             <h2>About Me</h2>
             <p>I am a physicist and computer science student with a strong interest in <strong>network and cloud technologies</strong>. 
             I enjoy exploring complex systems.</p>
-            <p>I am also enthusiastic about my <strong>homelab</strong>, where I experiment with Linux, server administration, and automation tools with great focus on multimedia processing and (self-hosted) LLM experiments. 
+            <p>I am also enthusiastic about my homelab, where I experiment with Linux, server administration, and automation tools with great focus on multimedia processing and (self-hosted) LLM experiments. 
             It’s my personal playground for learning and testing new technologies, and I plan to share more about these projects here soon.</p>
             <p>In the future, I will also write about my other projects and hobbies.</p>
         </div>
 
+        <!-- Blog posts list -->
+        <div class="content">
+            <h2>Blog Posts</h2>
+            <ul class="post-list">
+                {% for post in site.posts %}
+                <li class="post-item">
+                    <a class="post-title" href="{{ post.url }}">{{ post.title }}</a>
+                    <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 
-
     <footer>
-        <p>Jacek Strzałkowski &copy; 2025</p>
+        <p>Jacek Strzałkowski &copy; {{ site.time | date: "%Y" }}</p>
     </footer>
 </body>
 </html>
