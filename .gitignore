@@ -48,3 +48,25 @@ Thumbs.db
 .idea/
 *.sublime-project
 *.sublime-workspace
+
+# Ruby bundler files
+Gemfile.lock
+
+# Jekyll output
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Jekyll local config
+.jekyll-env
+
+# Byebug command history
+.byebug_history
+vendor
+
+test_run.sh
+Gemfile
+
+_posts/.obsidian
+_posts/templates
