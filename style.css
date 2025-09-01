@@ -1,13 +1,14 @@
+/* ========== Base / Reset ========== */
 * { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  margin: 0;
-  padding: 0;
   background: #f4f4f4;
   line-height: 1.6;
+  color: #111;
 }
 
-/* Layout container: 80% width but never wider than 800px */
+/* ========== Layout Container ========== */
 .container {
   width: 80%;
   max-width: 800px;
@@ -15,7 +16,7 @@ body {
   padding: 0 1rem;
 }
 
-/* Header */
+/* ========== Header ========== */
 header {
   background: #333;
   color: #fff;
@@ -27,8 +28,7 @@ header .container {
   justify-content: space-between;
   gap: 1rem;
   min-height: 70px;
-  padding-top: 10px; /* slightly less than your 30px for balance */
-  padding-bottom: 10px;
+  padding: 10px 0;
 }
 #branding h1 {
   margin: 0;
@@ -48,32 +48,96 @@ header nav ul {
   gap: 20px;
 }
 
-/* Main content blocks */
-.content, .post {
+/* ========== Main Content Blocks ========== */
+.content,
+.post {
   background: #fff;
   margin-top: 20px;
   padding: 20px;
   border-radius: 6px;
 }
 
-/* Typography inside posts */
-.post h1, .post h2, .post h3 { line-height: 1.25; margin-top: 1.2em; }
+/* ========== Typography in Posts ========== */
+.post h1, .post h2, .post h3 {
+  line-height: 1.25;
+  margin-top: 1.2em;
+}
 .post p { margin: 0.8em 0; }
 
-/* Images: scale to column width by default */
-.post img {
+/* ========== Images (scoped) ========== */
+/* Full-width images only inside .post (and .content if used) */
+.post img,
+.content img,
+.markdown-body img {
+  display: block;
   max-width: 100%;
   width: 100%;
   height: auto;
-  display: block;
   margin: 1em auto;
 }
 
-/* Optional utility for side-by-side, opt-in */
-.post img.half { max-width: 48%; width: 48%; }
-.post .row { display: flex; gap: 4%; flex-wrap: wrap; }
+/* Optional: utility class if you want to opt-in for other places */
+.img-fluid {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  margin: 1em auto;
+}
 
-/* Footer */
+/* Row/half helpers for side-by-side images/text in posts */
+.post .row { display: flex; gap: 4%; flex-wrap: wrap; }
+.post img.half { max-width: 48%; width: 48%; }
+
+/* ========== Contact Card ========== */
+.contact-card {
+  max-width: 400px;
+  padding: 1rem 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  background: #fff;
+  font-family: Arial, sans-serif;
+}
+.contact-card h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+/* Hard override to beat post/content image rules */
+.contact-card .contact-item img {
+  width: 1em !important;
+  height: 1em !important;
+  max-width: none !important;
+  display: inline-block !important;
+  margin: 0 !important;
+  vertical-align: -0.125em;
+}
+.contact-item a {
+  color: #0a66c2;
+  text-decoration: none;
+}
+
+
+.contact-item.discord a {
+  color: #5865F2; /* Discord blurple */
+}
+.contact-item.discord a:hover {
+  text-decoration: underline;
+}
+
+.contact-item.email a:hover {
+  text-decoration: underline;
+}
+
+.contact-item a:hover { text-decoration: underline; }
+
+/* ========== Footer ========== */
 footer {
   background: #333;
   color: #fff;
@@ -82,31 +146,12 @@ footer {
   margin-top: 20px;
 }
 
-/* Small screens */
+/* ========== Small Screens ========== */
 @media (max-width: 600px) {
-  header .container { flex-wrap: wrap; justify-content: center; text-align: center; }
+  header .container {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
   header nav ul { gap: 12px; }
 }
-
-.content img,
-.post img,
-.markdown-body img, /* in case you ever use a GitHub-style wrapper */
-img {
-  display: block;
-  max-width: 100%;
-  width: 100%;
-  height: auto;
-  margin: 1em auto;
-}
-
-.container .content .post img,
-.container .content img,
-.container img {
-  display: block;
-  width: 100% !important;
-  max-width: 100% !important;
-  height: auto !important;
-  margin: 1em auto;
-}
-
-.container .content .post { outline: 2px dashed rgba(255,0,0,.35); }
