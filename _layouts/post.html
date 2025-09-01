@@ -7,6 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="{{ "/style.css" | relative_url }}">
 </head>
+<!-- MathJax for inline/block math -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 <body>
   <header class="site-header">
     <nav>
@@ -15,11 +26,15 @@
     </nav>
   </header>
 
-  <main class="content">
-    <article class="post">
-      <h1>{{ page.title }}</h1>
-      {{ content }}
-    </article>
+  <main class="container"></main>
+    <div class="content">
+      <article class="post">
+        <h1>{{ page.title }}</h1>
+        <p class="meta">
+        {{ content }}
+        </p>
+      </article>
+    </div>
   </main>
 
   <footer class="site-footer">
