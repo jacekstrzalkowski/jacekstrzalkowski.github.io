@@ -9,11 +9,12 @@ body {
 }
 
 /* ========== Layout Container ========== */
+
+
 .container {
-  width: 80%;
-  max-width: 800px;
+  width: min(100%, 800px);
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 4px; /* 1rem => fixed px can avoid zoom jitter on some phones */
 }
 
 /* ========== Header ========== */
@@ -133,6 +134,19 @@ header nav ul {
 
 .contact-item.email a:hover {
   text-decoration: underline;
+}
+
+.contact-item.github a {
+  color: #000; /* GitHub black */
+}
+
+.contact-item.github.old a span {
+  color: #666; /* subtle "old projects" label */
+  font-size: 0.9em;
+}
+
+.contact-item.pgp a {
+  color: #2c7; /* green hint for security */
 }
 
 .contact-item a:hover { text-decoration: underline; }
