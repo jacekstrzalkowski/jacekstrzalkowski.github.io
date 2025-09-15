@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /404.html
+Disallow: /README.md
+
+Sitemap: https://jacekstrzalkowski.pl/sitemap.xml
